@@ -124,3 +124,9 @@ o3.line_items.append(orderline2)
 session.add_all([o3,])
 session.new
 session.commit()
+
+result = session.query(Customer).filter(Customer.first_name == 'Vadim')
+print(result[0])
+
+for c in result:
+    print(c.first_name)
